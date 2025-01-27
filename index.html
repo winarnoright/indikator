@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Feedback</title>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" integrity="sha512-Ef5r/bdKQ7JAmVBbTgivSgg3RM+SLRjwU0cAgySwTSv4+jYcVeDukMp+9lZGWT78T4vCUxgT3g+E8t7uabwRuw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script src="https://cdn.jsdelivr.net/npm/axios@1.2.1/dist/axios.min.js"></script>
+      <style>
+    .fa-star {
+      color: #ffd700;
+    }
+    
+  </style>
+
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+
+</head>
+<body class="w3-containter w3-padding">
+
+<div x-data="{
+
+    params: {},
+    getParams() {
+      const searchParams = new URLSearchParams(window.location.search);
+      this.params = {
+      pro: searchParams.get('pro'),
+      };
+    }
+  }"
+       x-init="getParams()">
+
+
+
+    <p x-text="params.pro"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 class="w3-center">PROFIL INDIKATOR</h1>
+  <h3 class="w3-center">RS SOEROJO HOSPITAL</h3>
+  <div style="margin: auto;">
+    <table border="1" class="w3-table">
+      <tr>
+        <td style="width: 20%">Nama Indikator</td>
+        <td style="width: 2%"> : </td>
+        <td colspan="2"><b>Respon time layanan sport clinic maksimal 15 menit</b></td>
+      </tr>
+      <tr>
+        <td>Kode Indikator</td>
+        <td> : </td>
+        <td colspan="2">2025</td>
+      </tr>
+      <tr>
+        <td>Area Indikator</td>
+        <td> : </td>
+        <td>
+          <input class="w3-radio" readonly name="area" type="checkbox"> Klinis
+        </td>
+        <td>
+          <input class="w3-radio" readonly checked name="area" type="checkbox"> Manajerial
+        </td>
+      </tr>
+      <tr>
+        <td>Tipe Indikator</td>
+        <td> : </td>
+        <td style="width: 39%">
+          <input class="w3-radio" checked readonly name="tipe" type="checkbox"> Struktur<br>
+          <input class="w3-radio" readonly name="tipe" type="checkbox"> Proses
+        </td>
+        <td style="width: 39%">
+          <input class="w3-radio" readonly name="tipe" type="checkbox"> Outcome<br>
+          <input class="w3-radio" readonly name="tipe" type="checkbox"> Proses dan Outcome
+        </td>
+      </tr>
+      <tr>
+        <td>Jenis Indikator</td>
+        <td> : </td>
+        <td>
+          <input class="w3-radio" checked readonly name="jenis" type="checkbox"> Ratebased<br>
+          <input class="w3-radio" readonly name="tipe" type="checkbox"> Waktu
+        </td>
+        <td>
+          <input class="w3-radio" readonly name="jenis" type="checkbox"> Persentase<br>
+          <input class="w3-radio" readonly name="jenis" type="checkbox"> Kepatuhan
+        </td>
+      </tr>
+
+      <tr>
+        <td>Perspektif</td>
+        <td> : </td>
+        <td>
+          <input class="w3-radio" checked readonly name="perspektif" type="checkbox"> Kapasitas RS<br>
+          <input class="w3-radio" readonly name="perspektif" type="checkbox"> Proses bisnis
+        </td>
+        <td>
+          <input class="w3-radio" readonly name="perspektif" type="checkbox"> Pelanggan/ stakeholder<br>
+          <input class="w3-radio" readonly name="perspektif" type="checkbox"> Keuangan
+        </td>
+      </tr>
+
+      <tr>
+        <td>Dimensi mutu</td>
+        <td> : </td>
+        <td>
+          <input class="w3-radio" checked readonly name="dimensimutu" type="checkbox"> Kelayakan<br>
+          <input class="w3-radio" readonly name="dimensimutu" type="checkbox"> Ketersediaan<br>
+          <input class="w3-radio" readonly name="dimensimutu" type="checkbox"> Kesinambungan<br>
+          <input class="w3-radio" checked readonly name="dimensimutu" type="checkbox"> Efektifitas<br>
+          <input class="w3-radio" readonly name="dimensimutu" type="checkbox"> Efisiensi
+        </td>
+        <td>
+          <input class="w3-radio" readonly name="dimensimutu" type="checkbox"> Ketepatan waktu<br>
+          <input class="w3-radio" readonly name="dimensimutu" type="checkbox"> Manfaat<br>
+          <input class="w3-radio" readonly name="dimensimutu" type="checkbox"> Keselamatan<br>
+          <input class="w3-radio" readonly name="dimensimutu" type="checkbox"> Kehormatan, dan harga diri<br>
+          <input class="w3-radio" readonly name="dimensimutu" type="checkbox"> Lainnya:....
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <td>Definisi istilah</td>
+        <td> : </td>
+        <td colspan="2">Respon time layanan sport clinic Maksimal 15 menit adalah waktu kedatangan sampai mendapat pelayanan dari jadwal yang sudah disepakati</td>
+        </tr>
+
+      <tr>
+        <td>Frekuensi pengumpulan data</td>
+        <td> : </td>
+        <td>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Harian<br>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Mingguan
+        </td>
+        <td>
+          <input checked class="w3-radio" readonly name="frekuensi" type="checkbox"> Bulanan<br>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Lainnya:....
+        </td>
+      </tr>
+
+      <tr>
+        <td>Periode waktu pelaporan</td>
+        <td> : </td>
+        <td>
+          <input checked class="w3-radio" readonly name="frekuensi" type="checkbox"> Bulanan<br>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Triwulan
+        </td>
+        <td>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Semesteran<br>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Lainnya:....
+        </td>
+      </tr>
+
+      <tr>
+        <td>Numerator</td>
+        <td> : </td>
+        <td colspan="2">Jumlah pasien yang dijadwalkan, datang dan dilayani dalam waktu maksimal 15 menit (a)</td>
+        </tr>
+
+      <tr>
+        <td>Denominator</td>
+        <td> : </td>
+        <td colspan="2">Jumlah seluruh pasien yang dijadwalkan dan datang (b)</td>
+        </tr>
+
+      <tr>
+        <td>Formula</td>
+        <td> : </td>
+        <td colspan="2">$$\frac{a}{b} \times 100\%$$</td>
+       
+        </tr>
+
+      <tr>
+        <td>Inklusi</td>
+        <td> : </td>
+        <td colspan="2">Seluruh pasien yang dijadwalkan dan datang</td>
+        </tr>
+
+      <tr>
+        <td>Eksklusi</td>
+        <td> : </td>
+        <td colspan="2">Pasien yang datang tidak sesuai jadwal dan pasien baru</td>
+        </tr>
+
+      <tr>
+        <td>Sumber data</td>
+        <td> : </td>
+        <td>
+          <input checked class="w3-radio" readonly name="sumberdata" type="checkbox"> Medical record<br>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Catatan data<br>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Laporan survei kepuasan
+        </td>
+        <td>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Sistem pelaporan: …..<br>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Observasi<br>
+          <input class="w3-radio" readonly name="frekuensi" type="checkbox"> Lainnya:....
+        </td>
+      </tr>
+
+      <tr>
+        <td>Standar/ target pengukuran, dan/ atau ambang batas</td>
+        <td> : </td>
+        <td colspan="2"> ≥ 90%</td>
+        </tr>
+
+      <tr>
+        <td>Metodologi pengumpulan data</td>
+        <td> : </td>
+        <td>
+          <input checked class="w3-radio" readonly name="metodologi" type="checkbox"> Retrospektif<br>
+        </td>
+        <td>
+          <input class="w3-radio" readonly name="metodologi" type="checkbox"> Concurent<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Pengelola data</td>
+        <td> : </td>
+        <td colspan="2"> </td>
+        </tr>
+
+      <tr>
+        <td>Rencana analisis</td>
+        <td> : </td>
+        <td>
+          <input class="w3-radio" readonly name="analisis" type="checkbox"> Tabel<br>
+        </td>
+        <td>
+          <input checked class="w3-radio" readonly name="analisis" type="checkbox"> Grafik<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Metode diseminasi hasil data pada staf</td>
+        <td> : </td>
+        <td>
+          <input class="w3-radio" readonly name="diseminasi" type="checkbox"> Rapat Dewas<br>
+          <input class="w3-radio" readonly name="diseminasi" type="checkbox"> Rapat direksi<br>
+          <input class="w3-radio" readonly name="diseminasi" type="checkbox"> Rapat pimpinan<br>
+          <input class="w3-radio" readonly name="diseminasi" type="checkbox"> Rapat pleno<br>
+        </td>
+        <td>
+          <input class="w3-radio" readonly name="diseminasi" type="checkbox"> Rapat kerja<br>
+          <input class="w3-radio" readonly name="diseminasi" type="checkbox"> Rapat khusus<br>
+          <input checked class="w3-radio" readonly name="diseminasi" type="checkbox"> Rapat direktorat<br>
+          <input checked class="w3-radio" readonly name="diseminasi" type="checkbox"> Rapat ruangan dan instalasi<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Alat pengumpul data</td>
+        <td> : </td>
+        <td>
+          <input class="w3-radio" readonly name="instrumen" type="checkbox"> Kuesioner: …..<br>
+        </td>
+        <td>
+          <input checked class="w3-radio" readonly name="instrumen" type="checkbox"> Formulir: catatan register pasien<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Referensi</td>
+        <td> : </td>
+        <td colspan="2"> </td>
+        </tr>
+
+
+    </table>
+    </div>
+
+
+
+</div>
+</body>
+</html>
+
+
+
